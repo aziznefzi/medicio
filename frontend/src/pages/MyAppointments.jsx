@@ -45,12 +45,12 @@ export default function MyAppointments() {
     }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-[#f0f9fa] to-[#e0f7ff] py-12 px-4'>
+    <div className='min-h-screen py-12 px-4' style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}>
       <div className='max-w-5xl mx-auto'>
         {/* Header */}
         <div className='mb-12'>
           <h2 className='text-4xl md:text-5xl font-bold text-[#008e9d] mb-4'>{t('my_medical_appointments')}</h2>
-          <p className='text-gray-600 text-lg'>{t('manage_appointments')}</p>
+          <p style={{ color: 'var(--text-secondary)' }} className='text-lg'>{t('manage_appointments')}</p>
         </div>
 
         {/* Loading State */}
@@ -64,12 +64,12 @@ export default function MyAppointments() {
 
         {/* Empty State */}
         {!loading && appointments?.length === 0 && (
-          <div className='bg-white rounded-2xl shadow-lg p-12 text-center'>
-            <div className='bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6'>
+          <div style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }} className='rounded-2xl shadow-lg p-12 text-center border'>
+            <div style={{ backgroundColor: 'var(--bg-primary)' }} className='w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6'>
               <Calendar size={48} className='text-gray-400' />
             </div>
-            <p className='text-gray-600 text-xl font-semibold'>{t('no_appointments')}</p>
-            <p className='text-gray-500 mt-2'>{t('start_booking')}</p>
+            <p className='text-xl font-semibold'>{t('no_appointments')}</p>
+            <p style={{ color: 'var(--text-secondary)' }} className='mt-2'>{t('start_booking')}</p>
           </div>
         )}
 
@@ -79,7 +79,8 @@ export default function MyAppointments() {
             {appointments?.map((app) => (
               <div 
                 key={app?._id} 
-                className='bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border-l-4 border-[#008e9d]'
+                style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}
+                className='rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border-l-4 !border-l-[#008e9d] border'
               >
                 <div className='grid grid-cols-1 md:grid-cols-5 gap-6 p-8'>
                   {/* Doctor Image */}
@@ -96,10 +97,10 @@ export default function MyAppointments() {
 
                   {/* Doctor Info */}
                   <div className='md:col-span-2'>
-                    <h3 className='text-2xl font-bold text-gray-800 mb-2'>{t('dr')} {app?.doctor?.name}</h3>
+                    <h3 className='text-2xl font-bold mb-2' style={{ color: 'var(--text-primary)' }}>{t('dr')} {app?.doctor?.name}</h3>
                     <p className='text-[#008e9d] font-semibold text-lg mb-4'>{app?.doctor?.specialty}</p>
                     
-                    <div className='space-y-2 text-gray-600'>
+                    <div style={{ color: 'var(--text-secondary)' }} className='space-y-2'>
                       <div className='flex items-center gap-2'>
                         <FileText size={16} className='text-[#008e9d]' />
                         <span className='text-sm'><strong>{t('reason')}:</strong> {app?.reason}</span>
@@ -109,9 +110,9 @@ export default function MyAppointments() {
 
                   {/* Appointment Details */}
                   <div className='md:col-span-1'>
-                    <div className='bg-[#f0f9fa] rounded-lg p-4 text-center'>
+                    <div style={{ backgroundColor: 'var(--bg-primary)' }} className='rounded-lg p-4 text-center'>
                       <Calendar size={20} className='text-[#008e9d] mx-auto mb-2' />
-                      <p className='text-sm text-gray-600 font-semibold'>{t('date_time')}</p>
+                      <p style={{ color: 'var(--text-secondary)' }} className='text-sm font-semibold'>{t('date_time')}</p>
                       <p className='text-lg font-bold text-[#008e9d]'>
                         {new Date(app?.date).toLocaleDateString(i18n.language === 'ar' ? 'ar-SA' : 'en-US', { 
                           weekday: 'long', 
@@ -144,8 +145,8 @@ export default function MyAppointments() {
 
         {/* Stats Footer */}
         {!loading && appointments?.length > 0 && (
-          <div className='mt-12 bg-white rounded-2xl shadow-lg p-8 text-center'>
-            <p className='text-gray-600'>
+          <div style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }} className='mt-12 rounded-2xl shadow-lg p-8 text-center border'>
+            <p style={{ color: 'var(--text-secondary)' }}>
               {t('total_appointments')}: <span className='text-3xl font-bold text-[#008e9d]'>{appointments?.length}</span>
             </p>
           </div>

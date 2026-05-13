@@ -55,40 +55,42 @@ export default function AddApoitment() {
 
   if (!user) {
     return (
-      <div className='flex items-center justify-center h-screen bg-gradient-to-br from-[#f0f9fa] to-[#e0f7ff]'>
+      <div className='flex items-center justify-center h-screen' style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className='text-center'>
           <h2 className='text-2xl md:text-3xl font-bold text-[#008e9d] mb-4'>
             {t('login_required_title')}
           </h2>
-          <p className='text-gray-600'>{t('login_required_desc')}</p>
+          <p style={{ color: 'var(--text-secondary)' }}>{t('login_required_desc')}</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-[#f0f9fa] to-[#e0f7ff] py-12 px-4'>
+    <div className='min-h-screen py-12 px-4' style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className='max-w-2xl mx-auto'>
         <form 
           onSubmit={handleSubmit}
-          className='bg-white shadow-2xl rounded-2xl p-8 md:p-12'
+          style={{ backgroundColor: 'var(--bg-secondary)', borderColor: 'var(--border-color)' }}
+          className='shadow-2xl rounded-2xl p-8 md:p-12 border'
         >
           <h1 className='text-3xl md:text-4xl font-bold mb-2 text-[#008e9d] text-center'>{t('book_medical_appointment')}</h1>
-          <p className='text-center text-gray-600 mb-8'>{t('select_doctor_date')}</p>
+          <p className='text-center mb-8' style={{ color: 'var(--text-secondary)' }}>{t('select_doctor_date')}</p>
           
           {/* Doctor Select */}
           <div className='mb-6'>
-            <label className='block mb-2 text-sm font-semibold text-gray-700'>{t('select_doctor')}</label>
+            <label className='block mb-2 text-sm font-semibold' style={{ color: 'var(--text-primary)' }}>{t('select_doctor')}</label>
             <select 
               name="doctor"
               value={form.doctor}
               onChange={handleChange}
               required
-              className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#008e9d] focus:outline-none transition'
+              style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', borderColor: 'var(--border-color)' }}
+              className='w-full px-4 py-3 border-2 rounded-lg focus:border-[#008e9d] focus:outline-none transition'
             >
-              <option value="">{t('choose_doctor_placeholder')}</option>
+              <option value="" style={{ backgroundColor: 'var(--bg-secondary)' }}>{t('choose_doctor_placeholder')}</option>
               {doctors?.map((doc) => (
-                <option key={doc._id} value={doc._id}>
+                <option key={doc._id} value={doc._id} style={{ backgroundColor: 'var(--bg-secondary)' }}>
                   {t('dr')} {doc?.name} - {doc?.specialty}
                 </option>
               ))}
@@ -97,20 +99,21 @@ export default function AddApoitment() {
 
           {/* Date Input */}
           <div className='mb-6'>
-            <label className='block mb-2 text-sm font-semibold text-gray-700'>{t('date')}</label>
+            <label className='block mb-2 text-sm font-semibold' style={{ color: 'var(--text-primary)' }}>{t('date')}</label>
             <input 
               type="date"
               name='date' 
               value={form.date}
               onChange={handleChange}
               required
-              className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#008e9d] focus:outline-none transition'
+              style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', borderColor: 'var(--border-color)' }}
+              className='w-full px-4 py-3 border-2 rounded-lg focus:border-[#008e9d] focus:outline-none transition'
             />
           </div>
 
           {/* Reason Input */}
           <div className='mb-8'>
-            <label className='block mb-2 text-sm font-semibold text-gray-700'>{t('reason_for_visit')}</label>
+            <label className='block mb-2 text-sm font-semibold' style={{ color: 'var(--text-primary)' }}>{t('reason_for_visit')}</label>
             <textarea 
               placeholder={t('reason_placeholder')}
               name='reason'
@@ -118,7 +121,8 @@ export default function AddApoitment() {
               onChange={handleChange}
               required
               rows="4"
-              className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#008e9d] focus:outline-none transition resize-none'
+              style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)', borderColor: 'var(--border-color)' }}
+              className='w-full px-4 py-3 border-2 rounded-lg focus:border-[#008e9d] focus:outline-none transition resize-none'
             ></textarea>
           </div>
 
