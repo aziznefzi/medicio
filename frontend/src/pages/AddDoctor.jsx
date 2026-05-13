@@ -59,17 +59,17 @@ export default function AddDoctor() {
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-[#f0f9fa] to-[#e0f7ff] py-12 px-4'>
+    <div className='min-h-screen bg-[var(--bg-primary)] py-12 px-4'>
       <div className='max-w-4xl mx-auto'>
-        <form onSubmit={handleSubmit} className='bg-white shadow-2xl rounded-2xl p-8 md:p-12' encType="multipart/form-data">
+        <form onSubmit={handleSubmit} className='bg-[var(--bg-secondary)] border border-[var(--border-color)] shadow-2xl rounded-2xl p-8 md:p-12' encType="multipart/form-data">
           
           <h2 className='text-3xl md:text-4xl font-bold mb-2 text-[#008e9d] text-center'>{t('add_new_doctor')}</h2>
-          <p className='text-center text-gray-600 mb-10'>{t('add_doctor_info')}</p>
+          <p className='text-center text-[var(--text-secondary)] mb-10'>{t('add_doctor_info')}</p>
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             {/* Image Upload Section */}
             <div className='md:col-span-1 flex flex-col items-center'>
-              <div className='w-40 h-40 border-4 border-dashed border-[#008e9d] rounded-full overflow-hidden flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition mb-4'>
+              <div className='w-40 h-40 border-4 border-dashed border-[#008e9d] rounded-full overflow-hidden flex items-center justify-center bg-[var(--bg-primary)] hover:bg-[var(--bg-secondary)] transition mb-4'>
                 {priveuw ? (
                   <img src={priveuw} className='object-cover w-full h-full' alt="Preview"/>
                 ) : (
@@ -99,7 +99,7 @@ export default function AddDoctor() {
               
               {/* Name Input */}
               <div>
-                <label className='block mb-2 text-sm font-semibold text-gray-700'>{t('name')}</label>
+                <label className='block mb-2 text-sm font-semibold text-[var(--text-primary)]'>{t('name')}</label>
                 <input 
                   onChange={handleChange} 
                   value={form.name} 
@@ -107,13 +107,13 @@ export default function AddDoctor() {
                   name="name"
                   placeholder={t('doctor_name_placeholder')}
                   required
-                  className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#008e9d] focus:outline-none transition'
+                  className='w-full px-4 py-3 bg-[var(--bg-primary)] text-[var(--text-primary)] border-2 border-[var(--border-color)] rounded-lg focus:border-[#008e9d] focus:outline-none transition'
                 />
               </div>
 
               {/* Specialty Input */}
               <div>
-                <label className='block mb-2 text-sm font-semibold text-gray-700'>{t('specialty')}</label>
+                <label className='block mb-2 text-sm font-semibold text-[var(--text-primary)]'>{t('specialty')}</label>
                 <input 
                   onChange={handleChange} 
                   value={form.specialty} 
@@ -121,13 +121,13 @@ export default function AddDoctor() {
                   name="specialty"
                   placeholder={t('specialty_placeholder')}
                   required
-                  className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#008e9d] focus:outline-none transition'
+                  className='w-full px-4 py-3 bg-[var(--bg-primary)] text-[var(--text-primary)] border-2 border-[var(--border-color)] rounded-lg focus:border-[#008e9d] focus:outline-none transition'
                 />
               </div>
 
               {/* Description Input */}
               <div>
-                <label className='block mb-2 text-sm font-semibold text-gray-700'>{t('description')}</label>
+                <label className='block mb-2 text-sm font-semibold text-[var(--text-primary)]'>{t('description')}</label>
                 <textarea 
                   onChange={handleChange} 
                   value={form.description} 
@@ -135,13 +135,13 @@ export default function AddDoctor() {
                   placeholder={t('doctor_desc_placeholder')}
                   required
                   rows="4"
-                  className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#008e9d] focus:outline-none transition resize-none'
+                  className='w-full px-4 py-3 bg-[var(--bg-primary)] text-[var(--text-primary)] border-2 border-[var(--border-color)] rounded-lg focus:border-[#008e9d] focus:outline-none transition resize-none'
                 />
               </div>
 
               {/* Experience Years Input */}
               <div>
-                <label className='block mb-2 text-sm font-semibold text-gray-700'>{t('years_of_experience')}</label>
+                <label className='block mb-2 text-sm font-semibold text-[var(--text-primary)]'>{t('years_of_experience')}</label>
                 <input 
                   onChange={handleChange} 
                   value={form.experienceYears} 
@@ -150,7 +150,7 @@ export default function AddDoctor() {
                   placeholder={t('experience_years_placeholder')}
                   required
                   min="0"
-                  className='w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-[#008e9d] focus:outline-none transition'
+                  className='w-full px-4 py-3 bg-[var(--bg-primary)] text-[var(--text-primary)] border-2 border-[var(--border-color)] rounded-lg focus:border-[#008e9d] focus:outline-none transition'
                 />
               </div>
             </div>

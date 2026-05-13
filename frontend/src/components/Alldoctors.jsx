@@ -34,7 +34,7 @@ export default function AllDoctors() {
         {/* Header */}
         <div className='text-center mb-12'>
           <h2 className='text-4xl md:text-5xl font-bold text-[#008e9d] mb-4'>{t('all_doctors_title')}</h2>
-          <p className='text-gray-600 text-lg max-w-2xl mx-auto'>{t('all_doctors_desc')}</p>
+          <p className='text-[var(--text-secondary)] text-lg max-w-2xl mx-auto'>{t('all_doctors_desc')}</p>
         </div>
 
         {/* Search Bar */}
@@ -57,7 +57,7 @@ export default function AllDoctors() {
             filteredDoctors.map((doc) => (
               <div 
                 key={doc._id} 
-                className='bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 group'
+                className='bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 group'
               >
                 <div className='relative overflow-hidden h-64'>
                   <img 
@@ -69,17 +69,17 @@ export default function AllDoctors() {
                 </div>
                 
                 <div className='p-6'>
-                  <h3 className='text-2xl font-bold text-gray-800 mb-2'>{t('dr')} {doc?.name}</h3>
+                  <h3 className='text-2xl font-bold text-[var(--text-primary)] mb-2'>{t('dr')} {doc?.name}</h3>
                   <p className='text-[#008e9d] font-semibold mb-4 text-lg'>{doc?.specialty}</p>
                   
-                  <div className='flex items-center gap-2 text-gray-600 mb-4 text-sm'>
-                    <span className='inline-block w-8 h-8 bg-[#e0f2f1] rounded-full flex items-center justify-center text-[#008e9d] font-bold'>
+                  <div className='flex items-center gap-2 text-[var(--text-secondary)] mb-4 text-sm'>
+                    <span className='inline-block w-8 h-8 bg-[var(--bg-primary)] rounded-full flex items-center justify-center text-[#008e9d] font-bold'>
                       {doc?.experienceYears}
                     </span>
                     <span>{t('years_experience')}</span>
                   </div>
                   
-                  <p className='text-gray-600 text-sm line-clamp-3 mb-4'>{doc?.description}</p>
+                  <p className='text-[var(--text-secondary)] text-sm line-clamp-3 mb-4'>{doc?.description}</p>
                   
                   <Link 
                     to={`/doctor/${doc?._id}`}
@@ -92,14 +92,14 @@ export default function AllDoctors() {
             ))
           ) : (
             <div className='col-span-full text-center py-12'>
-              <p className='text-gray-600 text-lg'>{t('no_doctors_found')}</p>
+              <p className='text-[var(--text-secondary)] text-lg'>{t('no_doctors_found')}</p>
             </div>
           )}
         </div>
 
         {/* Stats */}
-        <div className='bg-white rounded-2xl shadow-lg p-8 text-center'>
-          <p className='text-gray-600'>
+        <div className='bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-2xl shadow-lg p-8 text-center'>
+          <p className='text-[var(--text-secondary)]'>
             {t('available_doctors_count')} <span className='text-2xl font-bold text-[#008e9d]'>{filteredDoctors?.length}</span>
           </p>
         </div>

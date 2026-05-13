@@ -12,9 +12,10 @@ export default function About() {
         <div className='max-w-6xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-8 px-4'>
             <div className='relative'>
                 <img className='rounded-lg shadow-md' src={aboutUs} alt="" />
-                <a href="https://www.youtube.com/
-                watch?v=V7f98aduVJ8" className='absolute inset-0 
-                flex items-center justify-center'>
+                <a href="https://www.youtube.com/watch?v=aqnJvAb_uS0" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   className='absolute inset-0 flex items-center justify-center'>
                     <div className='bg-[var(--bg-secondary)] text-[var(--text-primary)] rounded-full p-4 shadow-lg 
                     hover:scale-110 transition'>
                         {t('play')}
