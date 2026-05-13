@@ -22,7 +22,7 @@ export default function Register() {
     e.preventDefault()
     setLoading(true)
     try {
-      const response = await axios.post("http://localhost:5000/user/register", form)
+      const response = await axios.post("https://medicio-1i5j.onrender.com/user/register", form)
       if(response.data.token) {
         login(response.data.token)
         toast.success(t('register_success'))

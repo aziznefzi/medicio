@@ -15,7 +15,7 @@ export default function MyAppointments() {
         const fetchAppointements =async () => {
            try{
                const token = localStorage.getItem("token")
-               const res = await axios.get("http://localhost:5000/appointments/myappointments",
+               const res = await axios.get("https://medicio-1i5j.onrender.com/appointments/myappointments",
                {headers: {Authorization: `Bearer ${token}`}})
                setAppointments(res.data)
                console.log(res)
@@ -34,7 +34,7 @@ export default function MyAppointments() {
         
         try {
             const token = localStorage.getItem("token")
-            await axios.delete(`http://localhost:5000/appointments/${id}`, 
+            await axios.delete(`https://medicio-1i5j.onrender.com/appointments/${id}`, 
             {headers: {Authorization: `Bearer ${token}`}})
             setAppointments(appointments.filter((app) => app._id !== id))
             toast.success(t('cancel_success'))
@@ -88,7 +88,7 @@ export default function MyAppointments() {
                       <img 
                         className='w-24 h-24 md:w-28 md:h-28 rounded-full object-cover ring-4 ring-[#e0f2f1] shadow-lg' 
                         alt={app?.doctor?.name}
-                        src={app?.doctor?.image ? `http://localhost:5000/files/${app?.doctor.image}` : 'https://via.placeholder.com/150'} 
+                        src={app?.doctor?.image ? `https://medicio-1i5j.onrender.com/files/${app?.doctor.image}` : 'https://via.placeholder.com/150'} 
                       />
                       <div className='absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-white'></div>
                     </div>

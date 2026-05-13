@@ -22,7 +22,7 @@ export default function Login() {
     e.preventDefault()
     setLoading(true)
     try {
-      const response = await axios.post("http://localhost:5000/user/signin", form)
+      const response = await axios.post("https://medicio-1i5j.onrender.com/user/signin", form)
       if(response.data.token) {
         login(response.data.token)
         toast.success(t('login_success'))

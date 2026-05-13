@@ -15,7 +15,7 @@ export default function DoctorDetels() {
     useEffect(() => {
     const fetchDoctors = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/doctors/${id}`)
+          const res = await axios.get(`https://medicio-1i5j.onrender.com/doctors/${id}`)
           setDoctor(res.data)
           fetchRelatedDoctors(res.data?.specialty?.toLowerCase())
         } catch (error) {
@@ -28,7 +28,7 @@ export default function DoctorDetels() {
 
     const fetchRelatedDoctors = async (specialty) => {
       try {
-        const res = await axios.get(`http://localhost:5000/doctors/BySpecialty/${specialty}`)
+        const res = await axios.get(`https://medicio-1i5j.onrender.com/doctors/BySpecialty/${specialty}`)
         const normalase = res.data.filter((doc) => doc?._id !== id && doc?.specialty?.toLowerCase() === specialty) 
         setRelztevDoctors(normalase)
       } catch (error) {
@@ -60,7 +60,7 @@ export default function DoctorDetels() {
             <div className='md:col-span-1 flex justify-center'>
               <img 
                 className='w-64 h-64 object-cover rounded-2xl shadow-lg ring-4 ring-[#e0f2f1] hover:scale-105 transition-transform duration-300'
-                src={`http://localhost:5000/files/${doctor?.image}`}
+                src={`https://medicio-1i5j.onrender.com/files/${doctor?.image}`}
                 alt={doctor?.name} 
               />
             </div>
@@ -119,7 +119,7 @@ export default function DoctorDetels() {
                 >
                   <img 
                     className='w-full h-48 object-cover rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300' 
-                    src={`http://localhost:5000/files/${doc?.image}`} 
+                    src={`https://medicio-1i5j.onrender.com/files/${doc?.image}`} 
                     alt={doc?.name} 
                   />
                    <h4 className='text-xl font-bold text-gray-800 mb-2'>{t('dr')} {doc?.name}</h4>

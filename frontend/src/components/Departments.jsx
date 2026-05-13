@@ -11,7 +11,7 @@ export default function Departments() {
  useEffect(() => {
     const fetchDepartments = async () => {
        try{
-          const response = await axios.get("http://localhost:5000/departments/Alldepartments");
+          const response = await axios.get("https://medicio-1i5j.onrender.com/departments/Alldepartments");
           setDepartments(response.data);
           if(response.data.length > 0){
            setActiveTab(response.data[0]._id);
@@ -76,7 +76,7 @@ export default function Departments() {
                   <div className='flex justify-center'>
                     {dep?.image && (
                       <img 
-                        src={`http://localhost:5000/uploads/${dep.image}`} 
+                        src={`https://medicio-1i5j.onrender.com/uploads/${dep.image}`} 
                         alt={dep?.name}
                         className='w-full max-w-md rounded-xl shadow-lg object-cover hover:scale-105 transition-transform duration-300'
                       />

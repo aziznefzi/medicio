@@ -40,7 +40,7 @@ export default function AddDoctor() {
       formData.append("experienceYears", form.experienceYears)
       if(form.image) formData.append("image", form.image)
       
-      await axios.post("http://localhost:5000/doctors/Adddoctors", formData, {
+      await axios.post("https://medicio-1i5j.onrender.com/doctors/Adddoctors", formData, {
         headers: {
           Authorization: `Bearer ${token}`
         }

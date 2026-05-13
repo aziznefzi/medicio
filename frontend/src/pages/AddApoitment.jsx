@@ -16,7 +16,7 @@ export default function AddApoitment() {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/doctors/Alldoctors")
+        const res = await axios.get("https://medicio-1i5j.onrender.com/doctors/Alldoctors")
         setDoctors(res.data)
       } catch (error) {
         console.error("Error fetching doctors:", error)
@@ -34,7 +34,7 @@ export default function AddApoitment() {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await axios.post("http://localhost:5000/appointments/createAppointment", form, {
+      const res = await axios.post("https://medicio-1i5j.onrender.com/appointments/createAppointment", form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }

@@ -12,8 +12,8 @@ export default function Stats() {
   useEffect(() => {
     const fetchStats = async () => {
       try{
-        const doctorsResponse = await axios.get("http://localhost:5000/doctors/count");
-        const departmentsResponse = await axios.get("http://localhost:5000/departments/count");
+        const doctorsResponse = await axios.get("https://medicio-1i5j.onrender.com/doctors/count");
+        const departmentsResponse = await axios.get("https://medicio-1i5j.onrender.com/departments/count");
         
         console.log("doctorsCount", doctorsResponse.data.count)
         console.log("departmentsCount", departmentsResponse.data.count)

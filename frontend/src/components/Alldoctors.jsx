@@ -13,7 +13,7 @@ export default function AllDoctors() {
   useEffect(() => {
     const fetchDoctors = async () => {
         try {
-          const res = await axios.get("http://localhost:5000/doctors/Alldoctors")
+          const res = await axios.get("https://medicio-1i5j.onrender.com/doctors/Alldoctors")
           setDoctors(res.data)
         } catch (error) {
           console.error("Error fetching doctors:", error);
@@ -62,7 +62,7 @@ export default function AllDoctors() {
                 <div className='relative overflow-hidden h-64'>
                   <img 
                     className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-300'
-                    src={`http://localhost:5000/files/${doc?.image}`}
+                    src={`https://medicio-1i5j.onrender.com/files/${doc?.image}`}
                     alt={doc?.name} 
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
